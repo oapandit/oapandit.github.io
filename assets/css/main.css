@@ -4248,6 +4248,10 @@ input[type="submit"].btn-block,input[type="reset"].btn-block,input[type="button"
 			border-color: #dddddd;
 		} */
 
+		.morepad{
+			padding: 3.5em 5em 3em 5em !important;
+		}
+
 		#main > .main {
 			padding: 1em 5em 3em 5em ;
 			border-top: solid 1px #dddddd;
