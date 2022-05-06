@@ -126,7 +126,7 @@ input, select, textarea {
 /* Type */
 
 	body {
-		background-color: #527ec3;
+		background-color: #afc5e7;
 		color: rgba(255, 255, 255, 0.65);
 	}
 
@@ -2497,6 +2497,12 @@ input, select, textarea {
 		color: #ffffff;
 	}
 
+.a-links{
+    color: #2962ff !important;
+    text-decoration: none !important;
+    font-weight: normal !important;
+}
+
 /* Actions */
 
 	ul.actions {
@@ -2624,7 +2630,7 @@ input, select, textarea {
 		display: block;
 	    position: relative;
     	left: 38em;
-    	top: -8em;
+    	top: -11em;
 	}
 
 	ul.icons {
@@ -2652,6 +2658,13 @@ input, select, textarea {
 		padding-left: 0;
 	}
 
+	.latest-note{
+		color: #ed8c8c;
+		font-weight: 500;
+	    font-size:1.15rem;
+	   	font-style: italic;
+	}
+
 	.edu-exp{
 		padding-left: 5em;
 		margin-bottom: 1em !important;
@@ -2676,7 +2689,7 @@ input, select, textarea {
 		}
 
 	.icon-color-font{
-		color:blue;
+		color:#2962ff;
 		font-size:2.5em
 	}
 	
@@ -3286,7 +3299,7 @@ input[type="submit"].btn-block,input[type="reset"].btn-block,input[type="button"
 	    margin-top:30px
 	}
 	.network-icon li{
-	    margin-right:10px
+	    margin-right:20px
 	}
 	.network-icon li:last-of-type{
 	    margin-right:0
@@ -3645,7 +3658,11 @@ input[type="submit"].btn-block,input[type="reset"].btn-block,input[type="button"
 		-ms-align-items: center;
 		align-items: flex-start;
 		margin: 0 0 2em 0;
-		justify-content: space-between;
+		justify-content: space-evenly;
+	}
+
+	.spotlight-main-page{
+		-webkit-align-items: center !important;
 	}
 
 		.spotlight .content {
@@ -3673,8 +3690,8 @@ input[type="submit"].btn-block,input[type="reset"].btn-block,input[type="button"
 
 			.spotlight .image img {
 				display: block;
-				border-radius: 100%;
-				width: 16em;
+				/* onkar border-radius: 100%;*/
+				width: 17em;
 			}
 
 		@media screen and (max-width: 980px) {
@@ -3963,7 +3980,7 @@ input[type="submit"].btn-block,input[type="reset"].btn-block,input[type="button"
 					}
 
 					#nav ul li a.active {
-						background-color: #acc0e1; /* Onkar changed from #ffffff to #bee3b2 */
+						background-color: #9cb7e1; /* Onkar changed from #ffffff to #bee3b2 */
 						box-shadow: none;
 					}
 
