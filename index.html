@@ -50,11 +50,25 @@
             <div class="about-layout">
             <div class="about-text">
             <h2>About</h2>
-            <p class="lede">I build large language models for Arabic, Hindi and specialized domains, and work on the engineering that makes them reliable in use.</p>
-            <p>I am a Senior Applied Scientist at <a href="https://inceptionai.ai/" target="_blank" rel="noopener">Inception Institute of AI, UAE</a>, where I have worked since April 2023. My team develops large language models for Arabic and Hindi. We open-sourced <a href="https://inceptionai.ai/jais/index.html" target="_blank" rel="noopener">Jais</a>, an Arabic-centric model family, and <a href="https://inceptionai.ai/nanda/index.html" target="_blank" rel="noopener">Nanda</a>, a Hindi model.</p>
-            <p>Most of my recent work is on the full path from data to a deployed model. That includes preference optimization and reinforcement learning with verifiable rewards (DPO, GRPO), automated evaluation platforms, domain-specific models for energy and Oil &amp; Gas, and agents that use tools such as SQL engines, code interpreters and search. I also work on distributed training for models with more than 100 billion parameters.</p>
-            <p>Earlier applied projects include deep-learning weather and climate downscaling (2024) and the use of LLM ensembles to find vulnerabilities in production code (2026).</p>
-            <p>I earned my Ph.D. in Computer Science from the <a href="https://www.univ-lille.fr/" target="_blank" rel="noopener">University of Lille</a> and <a href="https://www.inria.fr/fr/centre-inria-de-luniversite-de-lille" target="_blank" rel="noopener">INRIA, Lille</a> (2017–2021), working with the Magnet team on discourse understanding, temporal relations and bridging anaphora. Before that I was a Project Scientist at the Indian Statistical Institute, Kolkata, and a Senior Member Technical Staff at Oracle India in Bangalore. I hold an M.Tech. in Electrical Engineering from IIT Kanpur and a B.Tech. in Electronics and Telecommunication Engineering from SGGS Nanded.</p>
+            <p class="lede">I build large language models for Arabic, Hindi and specialized domains, and the engineering that makes them reliable.</p>
+
+            <h3 class="block-title">Now</h3>
+            <ul class="bullets">
+                <li>Leading the training and evaluation of a domain LLM for energy and Oil &amp; Gas (2024–2026, in progress).</li>
+                <li>Post-training with preference optimization and reinforcement learning with verifiable rewards (DPO, GRPO).</li>
+                <li>Agents that use tools such as SQL engines, code interpreters and search, trained in sandboxed environments.</li>
+            </ul>
+
+            <h3 class="block-title">Highlights</h3>
+            <ul class="bullets">
+                <li><a href="https://aclanthology.org/2026.emnlp-main.657/" target="_blank" rel="noopener">Jais 2: A Family of Arabic-Centric Open Large Language Models</a>, EMNLP 2026</li>
+                <li><a href="https://aclanthology.org/2026.eacl-long.288/" target="_blank" rel="noopener">Nanda Family: Open-Weights Generative Large Language Models for Hindi</a>, EACL 2026</li>
+                <li>LLM ensembles for finding vulnerabilities in production code, 2026</li>
+            </ul>
+
+            <h3 class="block-title">Background</h3>
+            <p>I am a Senior Applied Scientist at <a href="https://inceptionai.ai/" target="_blank" rel="noopener">Inception Institute of AI, UAE</a>, where I have worked since April 2023. Before that I earned a Ph.D. in Computer Science from the <a href="https://www.univ-lille.fr/" target="_blank" rel="noopener">University of Lille</a> and <a href="https://www.inria.fr/fr/centre-inria-de-luniversite-de-lille" target="_blank" rel="noopener">INRIA, Lille</a> (2017–2021), working on discourse understanding, temporal relations and bridging anaphora. I was a Project Scientist at the Indian Statistical Institute, Kolkata, and a Senior Member Technical Staff at Oracle India, Bangalore. I hold an M.Tech. in Electrical Engineering from IIT Kanpur and a B.Tech. in Electronics and Telecommunication Engineering from SGGS Nanded.</p>
+
             <ul class="chips" aria-label="Focus areas">
                 <li>Arabic LLMs</li>
                 <li>Hindi LLMs</li>
@@ -85,83 +99,143 @@
         <section class="view" id="view-work" data-view="work">
             <h2>Work</h2>
 
-            <div class="group">
-                <h3 class="group-title">Released models</h3>
-
-                <article class="item">
+            <article class="project">
+                <header class="project-head">
                     <span class="status">Released</span>
-                    <h3><a href="https://inceptionai.ai/jais/index.html" target="_blank" rel="noopener">Jais</a></h3>
-                    <p class="meta">2023–2024 · Arabic-centric open generative large language models</p>
-                    <p>Foundation and instruction-tuned models for Arabic and English. I worked on training, evaluation and deployment, including data preparation, Arabic benchmarks, and serving the models with function calling.</p>
-                    <p class="links"><a href="https://arxiv.org/pdf/2308.16149.pdf" target="_blank" rel="noopener">Paper</a><a href="https://inceptionai.ai/jais/index.html" target="_blank" rel="noopener">Model page</a></p>
-                </article>
+                    <h3>Jais: Arabic-centric open models</h3>
+                    <p class="meta">2023–2026</p>
+                </header>
+                <p>Open foundation and chat models for Arabic and English, built with Inception and partners. My work covered evaluation, training data and training.</p>
+                <ul class="bullets">
+                    <li><strong>Arabic evaluation.</strong> Implemented and ran Arabic benchmarks, including ACVA, Al-Ghafa, Arabic MMLU and BoolQA Arabic, to compare Jais with other open models.</li>
+                    <li><strong>Safety and helpfulness evaluation.</strong> Built GPT-4-as-judge pipelines and curated safety and helpfulness evaluation sets in English and Arabic.</li>
+                    <li><strong>DPO training data.</strong> Curated and prepared preference data for DPO training.</li>
+                    <li><strong>Training.</strong> Ran DPO experiments on LLaMA-2 based Arabic models, and trained maths-specialized models (see Mathematical reasoning below).</li>
+                    <li><strong>Deployment.</strong> Served models with function calling using vLLM, Hugging Face and TGI, with Gradio interfaces.</li>
+                </ul>
+                <p class="links"><span>Models on Hugging Face:</span>
+                    <a href="https://huggingface.co/inceptionai/jais-family-13b-chat" target="_blank" rel="noopener">Jais (2023)</a>
+                    <a href="https://huggingface.co/inception42/Jais-2-8B-Chat" target="_blank" rel="noopener">Jais 2, 8B Chat</a>
+                    <a href="https://huggingface.co/inception42/Jais-2-70B-Chat" target="_blank" rel="noopener">Jais 2, 70B Chat</a>
+                    <a href="https://huggingface.co/inception42" target="_blank" rel="noopener">Jais 3 (October 2026)</a>
+                </p>
+            </article>
 
-                <article class="item">
+            <article class="project">
+                <header class="project-head">
                     <span class="status">Released</span>
-                    <h3><a href="https://inceptionai.ai/nanda/index.html" target="_blank" rel="noopener">Nanda</a></h3>
-                    <p class="meta">2024 · Hindi large language model</p>
-                    <p>An open-source large language model for Hindi.</p>
-                    <p class="links"><a href="https://inceptionai.ai/nanda/index.html" target="_blank" rel="noopener">Model page</a></p>
-                </article>
-            </div>
+                    <h3>Nanda: Hindi open-weights models</h3>
+                    <p class="meta">2024–2026</p>
+                </header>
+                <p>Open-weight bilingual Hindi and English models built on Llama 3 and Llama 3.1. The EACL 2026 paper reports the following.</p>
+                <ul class="bullets">
+                    <li>A tokenizer extended with 20% Hindi-specific tokens, halving Hindi tokenization cost while keeping English efficiency.</li>
+                    <li>Hindi-first continual pretraining with Llama Pro on a 65-billion-token corpus covering Devanagari, code-mixed and Romanized Hindi.</li>
+                    <li>Bilingual instruction and safety alignment on a large, culturally grounded dataset.</li>
+                    <li>Nanda-87B reports state-of-the-art results on summarization, translation, transliteration and instruction following. Both models report state-of-the-art safety and cultural knowledge.</li>
+                    <li><strong>Evaluation.</strong> Built and maintained the Hindi evaluation setup, handed the Hindi LM Harness code to university partners, and resolved evaluation dataset issues such as punctuation and ROUGE scoring.</li>
+                </ul>
+                <p class="links"><a href="https://aclanthology.org/2026.eacl-long.288/" target="_blank" rel="noopener">Paper (EACL 2026)</a><a href="https://arxiv.org/abs/2504.06011" target="_blank" rel="noopener">Llama-3-Nanda-10B-Chat (arXiv)</a></p>
+            </article>
 
-            <div class="group">
-                <h3 class="group-title">Applied research and engineering</h3>
-
-                <article class="item">
+            <article class="project">
+                <header class="project-head">
                     <span class="status">In progress</span>
-                    <h3>Domain-specific LLM for energy and Oil &amp; Gas</h3>
-                    <p class="meta">2024–2026 · Data, training and evaluation</p>
-                    <p>Led the data curation, fine-tuning and evaluation pipeline for a domain LLM. Built multi-agent question-and-answer generation from industry documents, selected training data by instruction-following difficulty, and created evaluation sets validated by subject-matter experts.</p>
-                </article>
+                    <h3>Domain LLM for energy and Oil &amp; Gas</h3>
+                    <p class="meta">Nov 2024 – present</p>
+                </header>
+                <p>Led the data curation, fine-tuning and evaluation pipeline for a domain-specific LLM.</p>
+                <ul class="bullets">
+                    <li><strong>SFT data curation pipeline.</strong> A multi-agent GPT-4 pipeline generates questions and answers from industry documents, with verifiers for specificity and correctness. Training data is selected by instruction-following difficulty, and deduplicated and merged with general domain data.</li>
+                    <li><strong>Evaluation data curation pipeline.</strong> A domain and subdomain taxonomy, checked with four LLMs, guides question generation. Answers are verified, checked for contamination against training data, and validated by subject-matter experts.</li>
+                    <li><strong>Distributed GRPO training.</strong> Multi-node reinforcement learning with verifiable rewards for function calling, text-to-SQL, structured output and instruction following. Resolved generation-server timeouts, distributed broadcast errors and NCCL errors.</li>
+                    <li><strong>Large-scale pre-training data preparation.</strong> Processed 343 billion words of technical text into 18 billion words of English, Oil &amp; Gas relevant data, using language filtering, rule-based cleaning and fuzzy deduplication across 99 machines.</li>
+                    <li><strong>DPO training data preparation.</strong> Generated rejected responses for 59K question–answer pairs and built multi-pair preference data, producing 600K DPO pairs.</li>
+                    <li><strong>Model training and merging.</strong> SFT on LLaMA 4 Scout, SLERP model merging, and diagnosis of generation degeneration.</li>
+                </ul>
+            </article>
 
-                <article class="item">
-                    <h3>Preference optimization and reinforcement learning</h3>
-                    <p class="meta">2023–2025 · DPO, GRPO and reward modeling</p>
-                    <p>Preference data generation and DPO training, reward models, and multi-node GRPO training with verifiable rewards for function calling, text-to-SQL, structured output and instruction following.</p>
-                </article>
+            <article class="project">
+                <header class="project-head">
+                    <span class="status">In progress</span>
+                    <h3>Agentic reinforcement learning for tool use</h3>
+                    <p class="meta">2024–2026</p>
+                </header>
+                <ul class="bullets">
+                    <li>Built five execution environments with sandboxed tools: SQL on real databases (BIRD), Python and maths, bash, knowledge-graph queries, and wiki search over a 2018 Wikipedia dump.</li>
+                    <li>Diagnosed and fixed tool-calling and formatting failures that blocked early training runs, and ran combined training on 5,000 samples per environment.</li>
+                    <li>Key lesson: building robust, reproducible execution environments is harder than the reinforcement learning algorithm itself.</li>
+                </ul>
+            </article>
 
-                <article class="item">
-                    <h3>Automated LLM evaluation platform</h3>
-                    <p class="meta">2023–2026 · Evaluation infrastructure</p>
-                    <p>Began with extensions to the LM Evaluation Harness and GPT-4-as-judge pipelines, and grew into an automated platform that detects new model checkpoints and runs evaluations on Arabic, safety, math, code, function calling, SQL and domain tasks.</p>
-                </article>
+            <article class="project">
+                <header class="project-head">
+                    <span class="status">In progress</span>
+                    <h3>Mathematical reasoning</h3>
+                    <p class="meta">2023–2026</p>
+                </header>
+                <ul class="bullets">
+                    <li><strong>Literature survey.</strong> Surveyed training methods for mathematical reasoning, which shaped the data design.</li>
+                    <li><strong>Data curation.</strong> Built combined chain-of-thought and program-of-thought training sets, and a MetaMath reproduction, for LLaMA-2 based models.</li>
+                    <li><strong>Evaluation.</strong> GSM8k, MATH, MMLU STEM, and an Arabic math evaluation built by translating the Lila dataset.</li>
+                    <li><strong>Numerical solvers.</strong> Deterministic SymPy solvers for series and equation questions, deployed with production models.</li>
+                </ul>
+            </article>
 
-                <article class="item">
-                    <h3>Agents that use tools</h3>
-                    <p class="meta">2024–2026 · Agentic AI and reinforcement learning</p>
-                    <p>ReAct agents with calculators and code execution (2024). In 2026, training environments with sandboxed execution for SQL, Python, bash, knowledge-graph and wiki-search tools, and reward functions that check outcomes.</p>
-                </article>
-
-                <article class="item">
-                    <h3>Distributed training of large models</h3>
-                    <p class="meta">2025 · Multi-node training</p>
-                    <p>Analysis of ZeRO-3 communication overhead on multi-node clusters, and a hybrid parallelism setup with sharding inside each node and data parallelism across nodes, for models of more than 100 billion parameters.</p>
-                </article>
-
-                <article class="item">
-                    <h3>Large-scale pre-training data pipeline</h3>
-                    <p class="meta">2025 · Data engineering</p>
-                    <p>Built a pipeline that reduced 343 billion words of scientific and technical text to 18 billion words of high-quality English, domain-relevant data, using language filtering, rule-based cleaning and fuzzy deduplication at scale.</p>
-                </article>
-
-                <article class="item">
-                    <h3>Weather and climate downscaling</h3>
-                    <p class="meta">2024 · Deep learning for earth science</p>
-                    <p>Downscaling from 25 km reanalysis data (ERA5) to 2 km and 200 m WRF grids, with diffusion models (DDPM, DDIM and CorrDiff) and a FastAPI service that returns forecast videos and NetCDF files.</p>
-                </article>
-
-                <article class="item">
+            <article class="project">
+                <header class="project-head">
+                    <span class="status">2026</span>
                     <h3>LLM ensembles for vulnerability detection</h3>
-                    <p class="meta">2026 · Applied security research</p>
-                    <p>Applied research on AI agents and ensembles of LLMs to find vulnerabilities in production source code. Evaluated on public security benchmarks, including OWASP Java, CWE-Bench-Java and CyberGym.</p>
-                </article>
-            </div>
+                    <p class="meta">Oct–Nov 2026</p>
+                </header>
+                <p>Applied research on AI agents and LLM ensembles that find vulnerabilities in production source code.</p>
+                <ul class="bullets">
+                    <li><strong>Agent harnesses.</strong> Evaluated six harnesses for code investigation, including Codex Security, VISA, Codex, OpenCode, OpenHands and Mentis.</li>
+                    <li><strong>Ensemble strategies.</strong> Aggregate Council (union of findings, for coverage), Majority Vote (conservative), and Neo Council (an LLM reviewer that keeps or drops each finding).</li>
+                    <li><strong>OWASP Java benchmark.</strong> Best recall of 80 of 88 vulnerable servlets, with Neo Council verification on one harness.</li>
+                    <li><strong>CWE-Bench-Java.</strong> Full-project scans on 120 real CVEs, with no hints about file or CVE.</li>
+                    <li><strong>SEC-bench Pro.</strong> A three-model council generated working proof-of-concept exploits for 86 of 207 JavaScript engine cases (41.5%).</li>
+                    <li><strong>CyberGym.</strong> 66% pass rate on 100 reproduction tasks with the best open-weight model.</li>
+                </ul>
+            </article>
 
-            <div class="group">
-                <h3 class="group-title">Code and open source</h3>
-                <p>Research code for several publications is on <a href="https://github.com/oapandit" target="_blank" rel="noopener">GitHub</a>. Model releases are linked above.</p>
-            </div>
+            <article class="project">
+                <header class="project-head">
+                    <span class="status">Ongoing</span>
+                    <h3>LLM evaluation platform</h3>
+                    <p class="meta">2023–2026</p>
+                </header>
+                <ul class="bullets">
+                    <li>Started with LM Evaluation Harness extensions for Arabic, math, code and safety tasks, and GPT-4-as-judge scoring pipelines.</li>
+                    <li>Built an automated platform that detects new model checkpoints and runs evaluations on function calling, instruction following, SQL and domain tasks.</li>
+                    <li>Defined a weighted composite score for comparing models across all evaluation tasks.</li>
+                </ul>
+            </article>
+
+            <article class="project">
+                <header class="project-head">
+                    <span class="status">2025</span>
+                    <h3>Infrastructure and data engineering</h3>
+                    <p class="meta">2024–2025</p>
+                </header>
+                <ul class="bullets">
+                    <li><strong>Distributed training.</strong> Analysed DeepSpeed ZeRO-3 communication overhead on multi-node clusters, and built a hybrid parallelism setup for models of more than 100 billion parameters.</li>
+                    <li><strong>Function calling data.</strong> Curated a 450K-sample training set for function calling, structured output and Text2SQL, with reward functions that check outputs.</li>
+                    <li><strong>Model serving.</strong> Evaluated and deployed models from 7B to 180B parameters with vLLM, TGI, Hugging Face and FastChat.</li>
+                </ul>
+            </article>
+
+            <article class="project">
+                <header class="project-head">
+                    <span class="status">2024</span>
+                    <h3>Weather and climate downscaling</h3>
+                    <p class="meta">Sep–Nov 2024</p>
+                </header>
+                <ul class="bullets">
+                    <li>Downscaled 25 km ERA5 reanalysis data to 2 km and 200 m WRF grids with deep learning.</li>
+                    <li>Trained and evaluated diffusion models (DDPM, DDIM and CorrDiff), and built a FastAPI service that returns forecast videos and NetCDF files.</li>
+                </ul>
+            </article>
         </section>
 
         <!-- Publications -->
@@ -170,17 +244,17 @@
 
             <div class="pub"><p class="yr">2026</p><p class="t">Jais 2: A Family of Arabic-Centric Open Large Language Models</p><p class="a">Anwar et al. · EMNLP 2026 (Main)</p><p class="l"><a href="https://aclanthology.org/2026.emnlp-main.657.pdf" target="_blank" rel="noopener">PDF</a><a href="https://aclanthology.org/2026.emnlp-main.657.bib" target="_blank" rel="noopener">BibTeX</a></p></div>
             <div class="pub"><p class="yr">2026</p><p class="t">Nanda Family: Open-Weights Generative Large Language Models for Hindi</p><p class="a">Singh et al. · EACL 2026 (Long Papers)</p><p class="l"><a href="https://aclanthology.org/2026.eacl-long.288.pdf" target="_blank" rel="noopener">PDF</a><a href="https://aclanthology.org/2026.eacl-long.288.bib" target="_blank" rel="noopener">BibTeX</a></p></div>
-            <div class="pub"><p class="yr">2026</p><p class="t">PETRA: Transforming Web Text for Petroleum-Engineering Domain Adaptation</p><p class="a">arXiv:2606.24346, 2026</p><p class="l"><a href="https://arxiv.org/pdf/2606.24346" target="_blank" rel="noopener">PDF</a></p></div>
-            <div class="pub"><p class="yr">2025</p><p class="t">Llama-3-Nanda-10B-Chat: An Open Generative Large Language Model for Hindi</p><p class="a">arXiv:2504.06011, 2025</p><p class="l"><a href="https://arxiv.org/pdf/2504.06011" target="_blank" rel="noopener">PDF</a></p></div>
+            <div class="pub"><p class="yr">2026</p><p class="t">PETRA: Transforming Web Text for Petroleum-Engineering Domain Adaptation</p><p class="a">arXiv:2606.24346 · 2026</p><p class="l"><a href="https://arxiv.org/pdf/2606.24346" target="_blank" rel="noopener">PDF</a></p></div>
+            <div class="pub"><p class="yr">2025</p><p class="t">Llama-3-Nanda-10B-Chat: An Open Generative Large Language Model for Hindi</p><p class="a">arXiv:2504.06011 · 2025</p><p class="l"><a href="https://arxiv.org/pdf/2504.06011" target="_blank" rel="noopener">PDF</a></p></div>
             <div class="pub"><p class="yr">2024</p><p class="t">Bilingual Adaptation of Monolingual Foundation Models</p><p class="a">Gosal et al. · ICML 2024 Workshop on Foundation Models in the Wild</p><p class="l"><a href="https://arxiv.org/pdf/2407.12869" target="_blank" rel="noopener">PDF</a></p></div>
-            <div class="pub"><p class="yr">2023</p><p class="t">Jais and Jais-chat: Arabic-Centric Foundation and Instruction-Tuned Open Generative Large Language Models</p><p class="a">Sengupta et al. · arXiv:2308.16149</p><p class="l"><a href="https://arxiv.org/pdf/2308.16149.pdf" target="_blank" rel="noopener">PDF</a></p></div>
-            <div class="pub"><p class="yr">2021</p><p class="t">Probing for Bridging Inference in Transformer Language Models</p><p class="a"><span class="me">Onkar Pandit</span>, Yufang Hou · NAACL 2021</p><p class="l"><a href="https://aclanthology.org/2021.naacl-main.327.pdf" target="_blank" rel="noopener">PDF</a><a href="https://aclanthology.org/2021.naacl-main.327.bib" target="_blank" rel="noopener">BibTeX</a><a href="https://github.com/oapandit/ProbBertForBridging" target="_blank" rel="noopener">Code</a></p></div>
-            <div class="pub"><p class="yr">2021</p><p class="t">Integrating Contextual and Commonsense Information for Automatic Discourse Understanding: Contributions to Temporal Relation Classification and Bridging Anaphora Resolution (Ph.D. dissertation)</p><p class="a"><span class="me">Onkar Pandit</span> · Université de Lille and INRIA</p><p class="l"><a href="files/onkar_pandit_phd_dissertation.pdf">PDF</a><a href="https://hal.inria.fr/tel-03528029v1/bibtex" target="_blank" rel="noopener">BibTeX</a></p></div>
-            <div class="pub"><p class="yr">2020</p><p class="t">Integrating knowledge graph embeddings to improve mention representation for bridging anaphora resolution</p><p class="a"><span class="me">Onkar Pandit</span>, Pascal Denis, Liva Ralaivola · CRAC Workshop, COLING 2020</p><p class="l"><a href="https://aclanthology.org/2020.crac-1.7.pdf" target="_blank" rel="noopener">PDF</a><a href="https://aclanthology.org/2020.crac-1.7.bib" target="_blank" rel="noopener">BibTeX</a><a href="https://github.com/oapandit/BridgingKnowledgeGraphEmb" target="_blank" rel="noopener">Code</a></p></div>
-            <div class="pub"><p class="yr">2019</p><p class="t">Learning Rich Event Representations and Interactions for Temporal Relation Classification</p><p class="a"><span class="me">Onkar Pandit</span>, Pascal Denis, Liva Ralaivola · ESANN 2019</p><p class="l"><a href="https://hal.archives-ouvertes.fr/hal-02265061/document" target="_blank" rel="noopener">PDF</a><a href="https://hal.archives-ouvertes.fr/hal-02265061v1/bibtex" target="_blank" rel="noopener">BibTeX</a><a href="https://github.com/oapandit/TemporalRelClass" target="_blank" rel="noopener">Code</a></p></div>
-            <div class="pub"><p class="yr">2018</p><p class="t">CNN for Text-Based Multiple Choice Question Answering</p><p class="a">Chaturvedi, <span class="me">Onkar Pandit</span>, Garain · ACL 2018</p><p class="l"><a href="https://aclanthology.org/P18-2044.pdf" target="_blank" rel="noopener">PDF</a><a href="https://aclanthology.org/P18-2044.bib" target="_blank" rel="noopener">BibTeX</a><a href="https://github.com/akshay107/CNN-QA" target="_blank" rel="noopener">Code</a></p></div>
-            <div class="pub"><p class="yr">2017</p><p class="t">Context Sensitive Lemmatization Using Two Successive Bidirectional Gated Recurrent Networks</p><p class="a">Chakrabarty, <span class="me">Onkar Pandit</span>, Garain · ACL 2017</p><p class="l"><a href="https://aclanthology.org/P17-1136.pdf" target="_blank" rel="noopener">PDF</a><a href="https://aclanthology.org/P17-1136.bib" target="_blank" rel="noopener">BibTeX</a><a href="https://github.com/oapandit/neural-lemmatizer" target="_blank" rel="noopener">Code</a></p></div>
-            <div class="pub"><p class="yr">2017</p><p class="t">Identification of Reader Specific Difficult Words by Analyzing Eye Gaze and Document Content</p><p class="a">Garain, <span class="me">Onkar Pandit</span>, Augereau, Okoso, Kise · ICDAR 2017</p><p class="l"><a href="https://ieeexplore.ieee.org/document/8270152" target="_blank" rel="noopener">PDF</a><a href="files/eyegaze.bib">BibTeX</a></p></div>
+            <div class="pub"><p class="yr">2023</p><p class="t">Jais and Jais-chat: Arabic-Centric Foundation and Instruction-Tuned Open Generative Large Language Models</p><p class="a">Sengupta et al. · arXiv:2308.16149 · 2023</p><p class="l"><a href="https://arxiv.org/pdf/2308.16149.pdf" target="_blank" rel="noopener">PDF</a></p></div>
+            <div class="pub"><p class="yr">2021</p><p class="t">Probing for Bridging Inference in Transformer Language Models</p><p class="a"><span class="me">Pandit</span> and Hou · NAACL 2021</p><p class="l"><a href="https://aclanthology.org/2021.naacl-main.327.pdf" target="_blank" rel="noopener">PDF</a><a href="https://aclanthology.org/2021.naacl-main.327.bib" target="_blank" rel="noopener">BibTeX</a><a href="https://github.com/oapandit/ProbBertForBridging" target="_blank" rel="noopener">Code</a></p></div>
+            <div class="pub"><p class="yr">2021</p><p class="t">Integrating Contextual and Commonsense Information for Automatic Discourse Understanding: Contributions to Temporal Relation Classification and Bridging Anaphora Resolution (Ph.D. dissertation)</p><p class="a"><span class="me">Pandit</span> · Université de Lille and INRIA</p><p class="l"><a href="files/onkar_pandit_phd_dissertation.pdf" target="_blank" rel="noopener">PDF</a><a href="https://hal.inria.fr/tel-03528029v1/bibtex" target="_blank" rel="noopener">BibTeX</a></p></div>
+            <div class="pub"><p class="yr">2020</p><p class="t">Integrating knowledge graph embeddings to improve mention representation for bridging anaphora resolution</p><p class="a"><span class="me">Pandit</span> et al. · CRAC Workshop, COLING 2020</p><p class="l"><a href="https://aclanthology.org/2020.crac-1.7.pdf" target="_blank" rel="noopener">PDF</a><a href="https://aclanthology.org/2020.crac-1.7.bib" target="_blank" rel="noopener">BibTeX</a><a href="https://github.com/oapandit/BridgingKnowledgeGraphEmb" target="_blank" rel="noopener">Code</a></p></div>
+            <div class="pub"><p class="yr">2019</p><p class="t">Learning Rich Event Representations and Interactions for Temporal Relation Classification</p><p class="a"><span class="me">Pandit</span> et al. · ESANN 2019</p><p class="l"><a href="https://hal.archives-ouvertes.fr/hal-02265061/document" target="_blank" rel="noopener">PDF</a><a href="https://hal.archives-ouvertes.fr/hal-02265061v1/bibtex" target="_blank" rel="noopener">BibTeX</a><a href="https://github.com/oapandit/TemporalRelClass" target="_blank" rel="noopener">Code</a></p></div>
+            <div class="pub"><p class="yr">2018</p><p class="t">CNN for Text-Based Multiple Choice Question Answering</p><p class="a">Chaturvedi et al. · ACL 2018 (Short Papers)</p><p class="l"><a href="https://aclanthology.org/P18-2044.pdf" target="_blank" rel="noopener">PDF</a><a href="https://aclanthology.org/P18-2044.bib" target="_blank" rel="noopener">BibTeX</a><a href="https://github.com/akshay107/CNN-QA" target="_blank" rel="noopener">Code</a></p></div>
+            <div class="pub"><p class="yr">2017</p><p class="t">Context Sensitive Lemmatization Using Two Successive Bidirectional Gated Recurrent Networks</p><p class="a">Chakrabarty et al. · ACL 2017 (Long Papers)</p><p class="l"><a href="https://aclanthology.org/P17-1136.pdf" target="_blank" rel="noopener">PDF</a><a href="https://aclanthology.org/P17-1136.bib" target="_blank" rel="noopener">BibTeX</a><a href="https://github.com/oapandit/neural-lemmatizer" target="_blank" rel="noopener">Code</a></p></div>
+            <div class="pub"><p class="yr">2017</p><p class="t">Identification of Reader Specific Difficult Words by Analyzing Eye Gaze and Document Content</p><p class="a">Garain et al. · ICDAR 2017</p><p class="l"><a href="https://ieeexplore.ieee.org/document/8270152" target="_blank" rel="noopener">PDF</a><a href="files/eyegaze.bib" target="_blank" rel="noopener">BibTeX</a></p></div>
         </section>
 
         <!-- Writing -->
