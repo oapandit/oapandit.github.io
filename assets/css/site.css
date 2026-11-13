@@ -1,0 +1,130 @@
+/* Onkar Pandit homepage: Quiet Tabs layout. Light, sober, no build step. */
+
+:root {
+  --bg: #FFFFFF;
+  --ink: #1C1C1C;
+  --muted: #6B6B6B;
+  --accent: #3D4F63;
+  --line: #E6E6E6;
+  --chip: #F3F4F5;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Instrument Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 3px; }
+a:hover { color: var(--accent); }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+.skip-link {
+  position: absolute; left: 16px; top: -48px; background: var(--ink); color: var(--bg);
+  padding: 8px 12px; border-radius: 6px; text-decoration: none; z-index: 10;
+}
+.skip-link:focus { top: 12px; }
+
+/* Top tabs */
+nav.tabs {
+  max-width: 1040px; margin: 0 auto; padding: 0 32px;
+  display: flex; gap: 30px; border-bottom: 1px solid var(--line);
+  overflow-x: auto;
+}
+nav.tabs a {
+  text-decoration: none; color: var(--muted); padding: 22px 0 13px; font-size: 15px;
+  border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap;
+}
+nav.tabs a:hover { color: var(--ink); }
+nav.tabs a[aria-current="page"] { color: var(--ink); font-weight: 600; border-bottom-color: var(--accent); }
+
+/* Content column. Only the About tab shows the photo and identity panel beside its text. */
+.page {
+  max-width: 1040px; margin: 0 auto; padding: 64px 32px 96px;
+}
+main { min-width: 0; max-width: 900px; }
+
+.about-layout {
+  display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 80px; align-items: start;
+}
+
+.view { display: none; }
+.view.active { display: block; }
+/* Without JavaScript, every section is shown in order. */
+html:not(.js) .view { display: block; margin-bottom: 64px; }
+
+.view h2 {
+  font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .12em;
+  color: var(--muted); margin: 0 0 24px;
+}
+.view p { margin: 0 0 16px; max-width: 64ch; }
+.view h3 { font-size: 19px; font-weight: 600; margin: 0; letter-spacing: -.01em; }
+.lede { font-size: 24px; line-height: 1.4; letter-spacing: -.01em; margin: 0 0 24px !important; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0 0; padding: 0; list-style: none; }
+.chips li { background: var(--chip); color: var(--accent); font-size: 13px; font-weight: 500; padding: 4px 10px; border-radius: 6px; }
+
+/* Work and publications share a list layout */
+.group { margin: 0 0 40px; }
+.group h3.group-title {
+  font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em;
+  color: var(--muted); margin: 0 0 4px;
+}
+.item { display: grid; gap: 6px; padding: 22px 0; border-top: 1px solid var(--line); }
+.item:first-of-type { border-top: none; padding-top: 12px; }
+.item .meta { font-size: 14px; color: var(--muted); margin: 0; }
+.item p { font-size: 15px; margin: 0; max-width: 64ch; }
+.item .status { display: inline-block; font-size: 12px; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
+.item .links { font-size: 14px; margin: 4px 0 0; }
+.item .links a { margin-right: 14px; }
+
+.pub { padding: 18px 0; border-top: 1px solid var(--line); }
+.pub:first-of-type { border-top: none; padding-top: 0; }
+.pub .yr { font-size: 13px; color: var(--accent); font-weight: 600; font-variant-numeric: tabular-nums; margin: 0; }
+.pub .t { font-size: 17px; font-weight: 500; margin: 2px 0 4px; line-height: 1.4; }
+.pub .a { font-size: 14px; color: var(--muted); margin: 0 0 6px; }
+.pub .l { font-size: 14px; margin: 0; }
+.pub .l a { margin-right: 14px; }
+.me { font-weight: 600; color: var(--ink); }
+
+.note { font-size: 14px; color: var(--muted); max-width: 64ch; margin-top: 28px; }
+
+/* Placeholder links: visible, but clearly not final */
+.placeholder { color: var(--muted); font-style: italic; text-decoration: none; }
+
+/* CV tab */
+.cv-box { border: 1px solid var(--line); border-radius: 12px; padding: 28px; display: flex; flex-direction: column; gap: 14px; max-width: 480px; }
+.cv-box strong { font-size: 18px; font-weight: 600; }
+.cv-box .cv-row { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding-top: 12px; border-top: 1px solid var(--line); }
+.cv-box .cv-row:first-of-type { border-top: none; padding-top: 0; }
+.cv-box .cv-row span { font-size: 14px; color: var(--muted); }
+
+/* Side panel: photo, name, role, icons */
+aside.side { position: sticky; top: 40px; }
+.photo { width: 100%; aspect-ratio: 1 / 1; border-radius: 6px; overflow: hidden; background: var(--chip); }
+.avatar {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  transform: scale(1.25); transform-origin: 56% 55%;
+}
+aside h1 { font-size: 24px; font-weight: 600; margin: 22px 0 4px; letter-spacing: -.01em; }
+.role { color: var(--muted); font-size: 15px; margin: 0; }
+.social { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 16px; }
+.social a { color: var(--muted); font-size: 20px; line-height: 1; text-decoration: none; }
+.social a:hover { color: var(--accent); }
+.social i { width: 22px; text-align: center; }
+
+@media (max-width: 860px) {
+  nav.tabs { padding: 0 20px; gap: 22px; }
+  .page { padding: 40px 20px 72px; }
+  .about-layout { grid-template-columns: 1fr; gap: 48px; }
+  aside.side { position: static; order: 2; max-width: 240px; }
+  .lede { font-size: 20px; }
+}
